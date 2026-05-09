@@ -1,9 +1,7 @@
-// routes/produkRoute.js
 const express = require("express");
 const router = express.Router();
 const produkService = require("../services/produkService");
 
-// GET /course - List semua produk/kelas
 router.get("/", async (req, res) => {
   try {
     const data = await produkService.getAllProduk();
@@ -17,7 +15,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-// GET /course/:id - Tampilkan satu produk berdasarkan id
 router.get("/:id", async (req, res) => {
   try {
     const data = await produkService.getProdukById(req.params.id);
@@ -36,7 +33,6 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// PATCH /course/:id - Update data produk berdasarkan id
 router.patch("/:id", async (req, res) => {
   try {
     const result = await produkService.updateProduk(req.params.id, req.body);
@@ -54,7 +50,6 @@ router.patch("/:id", async (req, res) => {
   }
 });
 
-// DELETE /course/:id - Hapus data produk berdasarkan id
 router.delete("/:id", async (req, res) => {
   try {
     const result = await produkService.deleteProduk(req.params.id);
@@ -72,7 +67,6 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-// POST /course - Tambah data produk baru
 router.post("/", async (req, res) => {
   try {
     const result = await produkService.addProduk(req.body);

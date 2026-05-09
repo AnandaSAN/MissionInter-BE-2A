@@ -1,12 +1,10 @@
-// config/database.js
 const mysql = require("mysql2");
 
 const db = mysql.createConnection({
-  host: "localhost", // ganti sesuai host kamu
-  user: "root", // ganti sesuai username kamu
-  password: "", // ganti sesuai password kamu
-  port: 3306, // ganti sesuai port kamu
-  database: "video_course", // nama database
+  host: "localhost", 
+  user: "root", 
+  port: 3306, 
+  database: "video_course",
 });
 
 db.connect((err) => {

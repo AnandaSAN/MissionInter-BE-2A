@@ -1,9 +1,7 @@
-// routes/kategoriRoute.js
 const express = require("express");
 const router = express.Router();
 const kategoriService = require("../services/kategoriService");
 
-// GET /kategori - List semua Kategori
 router.get("/", async (req, res) => {
   try {
     const data = await kategoriService.getAllKategori();

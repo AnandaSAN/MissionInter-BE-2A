@@ -1,7 +1,5 @@
-// services/produkService.js
 const db = require("../config/database");
 
-// SELECT semua data produk
 const getAllProduk = () => {
   return new Promise((resolve, reject) => {
     const query = `
@@ -17,7 +15,6 @@ const getAllProduk = () => {
   });
 };
 
-// SELECT data produk by id
 const getProdukById = (id) => {
   return new Promise((resolve, reject) => {
     const query = `
@@ -34,7 +31,6 @@ const getProdukById = (id) => {
   });
 };
 
-// UPDATE data produk by id
 const updateProduk = (id, data) => {
   return new Promise((resolve, reject) => {
     const { judul, deskripsi, harga, foto, tutor_id, kategori_id } = data;
@@ -54,7 +50,6 @@ const updateProduk = (id, data) => {
   });
 };
 
-// DELETE data produk by id
 const deleteProduk = (id) => {
   return new Promise((resolve, reject) => {
     const query = "DELETE FROM produk WHERE id = ?";
@@ -65,7 +60,6 @@ const deleteProduk = (id) => {
   });
 };
 
-// INSERT data produk baru
 const addProduk = (data) => {
   return new Promise((resolve, reject) => {
     const { judul, deskripsi, harga, foto, tutor_id, kategori_id } = data;
